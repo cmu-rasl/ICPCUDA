@@ -34,9 +34,9 @@
 *  Author: Anatoly Baskeheev, Itseez Ltd, (myname.mysurname@mycompany.com)
 */
 
-#include "containers/initialization.hpp"
+#include "cudaicp/containers/initialization.hpp"
 #include "cuda.h"
-#include "containers/safe_call.hpp"
+#include "cudaicp/containers/safe_call.hpp"
 #include <stdio.h>
 #include <cassert>
 #include <iostream>

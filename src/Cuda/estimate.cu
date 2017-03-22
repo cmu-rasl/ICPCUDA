@@ -1,5 +1,5 @@
-#include "internal.h"
-#include "containers/safe_call.hpp"
+#include "cudaicp/internal.h"
+#include "cudaicp/containers/safe_call.hpp"
 
 #if __CUDA_ARCH__ < 300
 __inline__ __device__

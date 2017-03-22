@@ -34,8 +34,8 @@
  *  Author: Anatoly Baskeheev, Itseez Ltd, (myname.mysurname@mycompany.com)
  */
 
-#include "containers/device_memory.hpp"
-#include "containers/safe_call.hpp"
+#include "cudaicp/containers/device_memory.hpp"
+#include "cudaicp/containers/safe_call.hpp"
 
 #include "cuda_runtime_api.h"
 #include "assert.h"

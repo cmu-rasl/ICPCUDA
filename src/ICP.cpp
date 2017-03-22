@@ -1,4 +1,4 @@
-#include "ICPOdometry.h"
+#include "cudaicp/ICPOdometry.h"
 
 #include <iomanip>
 #include <fstream>
