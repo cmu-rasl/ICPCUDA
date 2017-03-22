@@ -38,7 +38,7 @@
 #ifndef INTERNAL_HPP_
 #define INTERNAL_HPP_
 
-#include "containers/device_array.hpp"
+#include "cudaicp/containers/device_array.hpp"
 
 #include <vector_types.h>
 #include <cuda_runtime_api.h>

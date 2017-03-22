@@ -46,7 +46,7 @@ CUDA_COMPILE(cuda_objs ${cuda})
 
 set(CMAKE_CXX_FLAGS "-O3 -march=armv8-a -Wall -std=c++11")
 
-add_library(cudaicp src/ICPOdometry.cpp
+add_library(cudaicp SHARED src/ICPOdometry.cpp
   ${cuda} ${cuda_objs}
   ${containers})
 target_link_libraries(cudaicp
