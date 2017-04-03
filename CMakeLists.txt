@@ -62,6 +62,9 @@ IF(${CMAKE_SYSTEM_PROCESSOR} MATCHES "x86_64")
 ELSEIF(${CMAKE_SYSTEM_PROCESSOR} MATCHES "arm")
   set(CMAKE_CXX_FLAGS "-O3 -march=armv8-a -Wall -std=c++11")
   message("[ICPCUDA] Jetson TX1 System Detected! Compute Architecture auto detected to be ${CUDA_ARCH_BIN}")
+ELSEIF(${CMAKE_SYSTEM_PROCESSOR} MATCHES "aarch64")
+  set(CMAKE_CXX_FLAGS "-O3 -march=armv8-a -Wall -std=c++11")
+  message("[ICPCUDA] Jetson TX2 System Detected! Compute Architecture auto detected to be ${CUDA_ARCH_BIN}")
 ENDIF()
 
 add_executable(ICP
