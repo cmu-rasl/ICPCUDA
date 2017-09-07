@@ -35,7 +35,7 @@ file(GLOB srcs src/*.cpp)
 file(GLOB cuda src/Cuda/*.cu)
 file(GLOB containers src/Cuda/containers/*.cpp)
 
-set(ICPCUDA_known_gpu_archs "20 30 32 35 37 50 52 53")
+set(ICPCUDA_known_gpu_archs "20 30 32 35 37 50 52 53 62")
 unset(CUDA_ARCH_BIN CACHE)
 
 detect_installed_gpus(CUDA_ARCH_BIN)
