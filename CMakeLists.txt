@@ -16,14 +16,11 @@ if(NOT EIGEN3-FOUND)
     eigen
     URL https://gitlab.com/libeigen/eigen/-/archive/3.3.7/eigen-3.3.7.tar.gz
     URL_HASH MD5=9e30f67e8531477de4117506fe44669b)
-  if(NOT eigen_POPULATED)
-    FetchContent_Populate(eigen)
-    set(EIGEN3_INCLUDE_DIR ${eigen_SOURCE_DIR})
-    find_package(Eigen3 3.3.7 REQUIRED)
-  endif()
+    FetchContent_MakeAvailable(eigen)
 endif()
 message(
   STATUS "[ICPCUDA]:: Eigen3 include directory used is ${EIGEN3_INCLUDE_DIR}")
+
 
 # Sophus
 if(NOT Sophus_FOUND)
@@ -36,7 +33,7 @@ if(NOT Sophus_FOUND)
     FetchContent_Populate(sophus)
     option(BUILD_TESTS "" OFF)
     option(BUILD_EXAMPLES "" OFF)
-    find_package(Sophus REQUIRED)
+    add_subdirectory(${sophus_SOURCE_DIR} ${sophus_BINARY_DIR})
   endif()
 endif()
 
@@ -72,7 +69,7 @@ target_compile_options(cudaicp PRIVATE ${EXTRA_COMPILE_OPTIONS})
 target_link_libraries(
   cudaicp
   PUBLIC ${CUDA_CUDART_LIBRARY} ${CUDA_CUDA_LIBRARY} ${CUDA_cudadevrt_LIBRARY}
-         ${Eigen_LIBRARIES} ${CUDA_LIBRARIES} Sophus::Sophus)
+         ${Eigen_LIBRARIES} ${CUDA_LIBRARIES} sophus)
 set_target_properties(cudaicp PROPERTIES INSTALL_RPATH_USE_LINK_PATH
          TRUE)
 target_include_directories(
@@ -104,7 +101,7 @@ endif()
 set (CUDAICP_INCLUDE_DIRS "${CMAKE_CURRENT_SOURCE_DIR}/include" )
 
 include(CMakePackageConfigHelpers)
-set(CUDAICP_CMAKE_EXPORT_DIR share/cmake/${PROJECT_NAME})
+set(CUDAICP_CMAKE_EXPORT_DIR share/${PROJECT_NAME}/cmake)
 
 set_target_properties(cudaicp PROPERTIES EXPORT_NAME cudaicp)
 
