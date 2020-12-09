@@ -119,7 +119,7 @@ export(TARGETS cudaicp FILE CUDAICPTargets.cmake)
 export(PACKAGE cudaicp)
 
 configure_package_config_file(
-  CUDAICPConfig.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/CUDAICPConfig.cmake
+  ${CMAKE_CURRENT_SOURCE_DIR}/CUDAICPConfig.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/CUDAICPConfig.cmake
   INSTALL_DESTINATION ${CUDAICP_CMAKE_EXPORT_DIR}
   PATH_VARS CUDAICP_INCLUDE_DIRS)
 
